@@ -153,7 +153,7 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 		#case 2, A is rational number and B is rational number p/q form
 		solution = self.app.get('/mul?A=5/4&B=12/5')
-		self.assertEqual(b'3.00', solution.data)
+		self.assertEqual(b'3.0', solution.data)
 
 	def test_mul3(self):
 
@@ -171,19 +171,19 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 		#case 5, when A is integer and B is float
 		solution = self.app.get('/mul?A=30&B=2.2')
-		self.assertEqual(b'66', solution.data)
+		self.assertEqual(b'66.0', solution.data)
 
 	def test_mul6(self):
 
 		#case 6, when A is fraction p/q and B is an integer
 		solution = self.app.get('/mul?A=2/3&B=55')
-		self.assertEqual(b'36.66', solution.data)
+		self.assertEqual(b'36.666666666666664', solution.data)
 
 	def test_mul7(self):
 
 		#case 7, when A is an integer and B is a fraction p/q
 		solution = self.app.get('/mul?A=19&B=5/14')
-		self.assertEqual(b'6.7857', solution.data)
+		self.assertEqual(b'6.785714285714286', solution.data)
 
 	def test_mul8(self):
 
@@ -220,31 +220,31 @@ class TestCalculator(unittest.TestCase):#unittest module provides a set of tools
 
 		#case 2, A is rational number and B is rational number p/q form
 		solution = self.app.get('/div?A=3/7&B=61/4')
-		self.assertEqual(b'6.5357', solution.data)
+		self.assertEqual(b'0.02810304449648712', solution.data)
 
 	def test_div3(self):
 
 		#case 3, A is a float and B is a float
 		solution = self.app.get('/div?A=6.21&B=4.1')
-		self.assertEqual(b'1.5146', solution.data)
+		self.assertEqual(b'1.5146341463414634', solution.data)
 
 	def test_div4(self):
 
 		#case 4, when A is float and B is integer
 		solution = self.app.get('/div?A=51.33&B=13')
-		self.assertEqual(b'3.948461', solution.data)
+		self.assertEqual(b'3.9484615384615385', solution.data)
 
 	def test_div5(self):
 
 		#case 5, when A is integer and B is float
 		solution = self.app.get('/div?A=20&B=2.2')
-		self.assertEqual(b'9.090909', solution.data)
+		self.assertEqual(b'9.090909090909092', solution.data)
 
 	def test_div6(self):
 
 		#case 6, when A is fraction p/q and B is an integer
 		solution = self.app.get('/div?A=1/2&B=100')
-		self.assertEqual(b'50', solution.data)
+		self.assertEqual(b'0.005', solution.data)
 
 	def test_div7(self):
 
